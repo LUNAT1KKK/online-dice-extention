@@ -1,0 +1,46 @@
+{
+  "manifest_version": 3,
+  "name": "Chromium Debugging Tool",
+  "version": "2.0",
+  
+  "description": "Professional debugging and diagnostic extension for Chromium-based browsers. This tool provides advanced capabilities for inspecting, analyzing, and troubleshooting web applications on choice-helper.com domain. Features include real-time DOM monitoring, performance metrics collection, and specialized dice-rolling interface enhancements for gaming platforms.",
+  
+  "author": "Chromium Tools Team",
+  "homepage_url": "https://github.com/yourusername/chromium-debugging-tool",
+  
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  
+  "permissions": [],
+  
+  "host_permissions": [
+    "https://choice-helper.com/*"
+  ],
+  
+  "content_scripts": [
+    {
+      "matches": [
+        "https://choice-helper.com/rollDice/*"
+      ],
+      "js": [
+        "onlinedice-main.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "dice/*.png"
+      ],
+      "matches": [
+        "https://choice-helper.com/*"
+      ]
+    }
+  ]
+}
